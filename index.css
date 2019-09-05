@@ -1,0 +1,653 @@
+body {
+    height: 100%;
+    -ms-perspective: 1000px;
+    perspective: 1000px;
+    background: url(images/bg.jpg) no-repeat top center;
+}
+
+section {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 80px auto;
+    -ms-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    /* 添加动画效果 */
+    -ms-animation: rotate 9s linear infinite;
+    -webkit-animation: rotate 9s linear infinite;
+    -moz-animation: rotate 9s linear infinite;
+    -o-animation: rotate 9s linear infinite;
+    animation: rotate 9s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(0);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+@media screen and (max-width: 767px) {
+    .row section {
+    width: 100px;
+    height: 100px;
+    margin: 60px auto;
+    animation: rotate 7s linear infinite;
+    }
+    .container .row section div {
+        font-size: 100px;
+    }
+    .container .row section div:nth-child(1) {
+        transform: rotateY(0) translateZ(150px);
+    }
+    
+    .container .row section div:nth-child(2) {
+        /* 先旋转好了再 移动距离 */
+        transform: rotateY(60deg) translateZ(150px);
+    }
+    
+    .container .row section div:nth-child(3) {
+        /* 先旋转好了再 移动距离 */
+        transform: rotateY(120deg) translateZ(150px);
+    }
+    
+    .container .row section div:nth-child(4) {
+        /* 先旋转好了再 移动距离 */
+        transform: rotateY(180deg) translateZ(150px);
+    }
+    
+    .container .row section div:nth-child(5) {
+        /* 先旋转好了再 移动距离 */
+        transform: rotateY(240deg) translateZ(150px);
+    }
+    
+    .container .row section div:nth-child(6) {
+        /* 先旋转好了再 移动距离 */
+        transform: rotateY(300deg) translateZ(150px);
+    }
+    body .footer {
+        top: -58px;
+    }
+}
+
+section div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: url(images/a.png) no-repeat; */
+    background-color: transparent;
+    font-size: 250px;
+    font-family: KaiTi;
+    color: #b59cff;
+}
+
+section div:nth-child(1) {
+    transform: rotateY(0) translateZ(300px);
+}
+
+section div:nth-child(2) {
+    /* 先旋转好了再 移动距离 */
+    transform: rotateY(60deg) translateZ(300px);
+}
+
+section div:nth-child(3) {
+    /* 先旋转好了再 移动距离 */
+    transform: rotateY(120deg) translateZ(300px);
+}
+
+section div:nth-child(4) {
+    /* 先旋转好了再 移动距离 */
+    transform: rotateY(180deg) translateZ(300px);
+}
+
+section div:nth-child(5) {
+    /* 先旋转好了再 移动距离 */
+    transform: rotateY(240deg) translateZ(300px);
+}
+
+section div:nth-child(6) {
+    /* 先旋转好了再 移动距离 */
+    transform: rotateY(300deg) translateZ(300px);
+}
+.aa {
+    background-color: #000000;
+}
+.abc-heise {
+    background-color: #fff;
+}
+
+.footer {
+    position: absolute;
+    top: -78px;
+    left: -7px;
+}
+.footer audio {
+    width: 100px;
+    height: 20px;
+    background-color: transparent;  
+}
+
+
+/* 烟花特效 */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 32px;
+    
+    font-family: sans-serif;
+    color: #FFF;
+    font-family: "Playfair Display", serif;
+    /*margin: 50px;*/
+    margin: 0;
+    overflow: hidden;
+}
+#container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 1500px;
+
+}
+#card {
+    text-align: center;
+    position: relative;
+    display: block;
+    max-width: 600px;
+    width: 600px;
+    height: 400px;
+    background: #3F2860;
+    overflow: hidden;
+    box-shadow: 0 0 0.5em rgba(0,0,0,0.4);
+    box-shadow: 0.25em 0.25em 0px 0px rgba(0, 0, 0, 0.3);
+
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    overflow: visible;
+}
+.text {
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    color: #E49BD4;
+    word-wrap: break-word;
+}
+p {
+    font-weight: 400;
+    font-size: 1em;
+}
+h1 {
+    width: 100%;
+    height: 100%;
+    line-height: 350px;
+    font-size: 6em;
+    font-weight: 900;
+    position: relative;
+    margin: 0;
+}
+
+/* FOR HOVER
+---------------------------------------*/
+.front, .back {
+    background: #3F2860;
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+.back {
+    z-index:10;
+    transform: rotateY(180deg);
+}
+/*
+#container:hover #card{
+    transform: rotateY(-180deg);
+}
+*/
+.back p {
+    line-height: normal;
+    position: relative;
+    margin:0 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 600px) {
+    h1 { line-height: 175px;}
+    #card {
+        width: 300px;
+        height: 400px;
+    }
+
+}
+.firework-grp {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: white;
+    color: #535396;
+}
+.firework-grp2{
+    transform: rotate(180deg);
+    color: #2C1C44;
+    z-index: 6;
+}
+.firework-grp3{
+    transform: rotate(-75deg);
+    color: #E339BD;
+    z-index: 7;
+}
+.firework {
+    font-size: 10px;
+    display: block;
+    width: 8.5em;
+    height: 8.5em;
+    position: absolute;
+}
+
+/* SIZES
+------------------------------------*/
+.size05 {
+    transform: scale(0.5);
+}
+.size08 {
+    transform: scale(0.8);
+}
+.size13 {
+    transform: scale(1.3);
+}
+.size15 {
+    transform: scale(1.5);
+}
+.size18 {
+    transform: scale(1.8);
+}
+.size20 {
+    transform: scale(2);
+}
+
+/* POSITION
+------------------------------------*/
+.pos1 {
+    left: 56%;
+    top: 65%;
+}
+.pos2 {
+    left: 25%;
+    top: 15%;
+}
+.pos3 {
+    left: 50%;
+    top: 25%;
+}
+.pos4 {
+    left: -5%;
+    top: 50%;
+}
+.pos5 {
+    left: 90%;
+    top: 65%;
+}
+.pos6 {
+    left: 35%;
+    top: 75%;
+}
+.pos7 {
+    left: 5%;
+    top: -5%;
+}
+.pos8 {
+    left: 75%;
+    top: 20%;
+}
+
+
+
+/* FIREWORK
+------------------------------------*/
+.drops-grp {
+    display: block;
+    width: 8.5em;
+    height: 8.5em;
+    position: absolute;
+}
+.drops-grp2 {
+    display: block;
+    width: 8.5em;
+    height: 8.5em;
+    position: absolute;
+    transform: rotate(45deg);
+}
+.drop {
+    display: block;
+    width: 1em;
+    height: 2em;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+}
+.drop:before {
+    content: "";
+    display: block;
+    width: 1em;
+    height: 1em;
+    background: currentColor;
+    border-radius: 50%;
+}
+.drop:after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -0.4em;
+    width: 0;
+    height: 0;
+    border-top: 1.4em solid currentColor;
+    border-left: 0.5em solid transparent;
+    border-right: 0.5em solid transparent;
+}
+.drop-1 {
+    left:3.75em;
+    top: 0;
+    animation: drop1anim 1s ease-in-out infinite;
+}
+.drop-2 {
+    top: 3.25em;
+    right: 0;
+    animation: drop2anim 1s ease-in-out infinite;
+}
+.drop-3 {
+    left:3.75em;
+    bottom: 0;
+    animation: drop3anim 1s ease-in-out infinite;
+}
+.drop-4 {
+    top: 3.25em;
+    left: 0;
+    animation: drop4anim 1s ease-in-out infinite;
+}
+.firework-2 .drop-1 {
+    animation-delay: 0.5s
+}
+.firework-2 .drop-2 {
+    animation-delay: 0.5s
+}
+.firework-2 .drop-3 {
+    animation-delay: 0.5s
+}
+.firework-2 .drop-4 {
+    animation-delay: 0.5s
+}
+
+/* FIREWORK DELAY
+------------------------------------*/
+.delay1 .drop-1 {
+    animation-delay: 0.25s
+}
+.delay1 .drop-2 {
+    animation-delay: 0.25s
+}
+.delay1 .drop-3 {
+    animation-delay: 0.25s
+}
+.delay1 .drop-4 {
+    animation-delay: 0.25s
+}
+
+.delay2 .drop-1 {
+    animation-delay: 0.75s
+}
+.delay2 .drop-2 {
+    animation-delay: 0.75s
+}
+.delay2 .drop-3 {
+    animation-delay: 0.75s
+}
+.delay2 .drop-4 {
+    animation-delay: 0.75s
+}
+
+/* keyframes
+------------------------------------*/
+@keyframes drop1anim {
+    0% {
+        top:3.25em;
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        top: -0.75em;
+        opacity: 0;
+        transform: scale(0.3);
+    }
+}
+@keyframes drop2anim {
+    0% {
+        right:3.75em;
+        opacity: 0;
+        transform: scale(0.3) rotate(90deg);
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1) rotate(90deg);
+    }
+    100% {
+        right: -0.25em;
+        opacity: 0;
+        transform: scale(0.3) rotate(90deg);
+    }
+}
+@keyframes drop3anim {
+    0% {
+        bottom:3.25em;
+        opacity: 0;
+        transform: scale(0.3) rotate(180deg);
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1) rotate(180deg);
+    }
+    100% {
+        bottom: -0.75em;
+        opacity: 0;
+        transform: scale(0.3) rotate(180deg);
+    }
+}
+@keyframes drop4anim {
+    0% {
+        left:3.75em;
+        opacity: 0;
+        transform: scale(0.3) rotate(-90deg);
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1) rotate(-90deg);
+    }
+    100% {
+        left: -0.25em;
+        opacity: 0;
+        transform: scale(0.3) rotate(-90deg);
+    }
+}
+
+
+
+
+/* 生日蛋糕特效 */
+
+.cake {
+    position: absolute;
+    width: 250px;
+    height: 200px;
+    bottom: -300px;
+    left: 50%;
+    margin-top: -70px;
+    margin-left: -125px;
+}
+.plate {
+    width: 270px;
+    height: 110px;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    box-shadow: 0 2px 0 #b3b3b3, 0 4px 0 #b3b3b3, 0 5px 40px rgba(0, 0, 0, 0.5);
+}
+.cake > * {
+    position: absolute;
+}
+.layer {
+    position: absolute;
+    display: block;
+    width: 250px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #553c13;
+    box-shadow: 0 2px 0px #6a4b18, 0 4px 0px #33240b, 0 6px 0px #32230b, 0 8px 0px #31230b, 0 10px 0px #30220b, 0 12px 0px #2f220b, 0 14px 0px #2f210a, 0 16px 0px #2e200a, 0 18px 0px #2d200a, 0 20px 0px #2c1f0a, 0 22px 0px #2b1f0a, 0 24px 0px #2a1e09, 0 26px 0px #2a1d09, 0 28px 0px #291d09, 0 30px 0px #281c09;
+}
+.layer-top {
+    top: 0px;
+}
+.layer-middle {
+    top: 33px;
+}
+.layer-bottom {
+    top: 66px;
+}
+.icing {
+    top: 2px;
+    left: 5px;
+    background-color: #f0e4d0;
+    width: 240px;
+    height: 90px;
+    border-radius: 50%;
+}
+.icing:before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    bottom: 6px;
+    left: 5px;
+    background-color: #f4ebdc;
+    box-shadow: 0 0 4px #f6efe3, 0 0 4px #f6efe3, 0 0 4px #f6efe3;
+    border-radius: 50%;
+    z-index: 1;
+}
+.drip {
+    display: block;
+    width: 50px;
+    height: 60px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: #f0e4d0;
+}
+.drip1 {
+    top: 53px;
+    left: 5px;
+    transform: skewY(15deg);
+    height: 48px;
+    width: 40px;
+}
+.drip2 {
+    top: 69px;
+    left: 181px;
+    transform: skewY(-15deg);
+}
+.drip3 {
+    top: 54px;
+    left: 90px;
+    width: 80px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+.candle {
+    background-color: #7b020b;
+    width: 16px;
+    height: 50px;
+    border-radius: 8px / 4px;
+    top: -20px;
+    left: 50%;
+    margin-left: -8px;
+    z-index: 10;
+}
+.candle:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ad030f;
+}
+.flame {
+    position: absolute;
+    background-color: orange;
+    width: 15px;
+    height: 35px;
+    border-radius: 10px 10px 10px 10px / 25px 25px 10px 10px;
+    top: -34px;
+    left: 50%;
+    margin-left: -7.5px;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
+    transform-origin: 50% 90%;
+    animation: flicker 1s ease-in-out alternate infinite;
+}
+@keyframes flicker {
+    0% {
+        transform: skewX(5deg);
+        box-shadow: 0 0 10px rgba(255, 165, 0, 0.2), 0 0 20px rgba(255, 165, 0, 0.2), 0 0 60px rgba(255, 165, 0, 0.2), 0 0 80px rgba(255, 165, 0, 0.2);
+    }
+    25% {
+        transform: skewX(-5deg);
+        box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
+    }
+    50% {
+        transform: skewX(10deg);
+        box-shadow: 0 0 10px rgba(255, 165, 0, 0.3), 0 0 20px rgba(255, 165, 0, 0.3), 0 0 60px rgba(255, 165, 0, 0.3), 0 0 80px rgba(255, 165, 0, 0.3);
+    }
+    75% {
+        transform: skewX(-10deg);
+        box-shadow: 0 0 10px rgba(255, 165, 0, 0.4), 0 0 20px rgba(255, 165, 0, 0.4), 0 0 60px rgba(255, 165, 0, 0.4), 0 0 80px rgba(255, 165, 0, 0.4);
+    }
+    100% {
+        transform: skewX(5deg);
+        box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
+    }
+}
